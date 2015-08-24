@@ -22,7 +22,7 @@ exports.logData = function ( req ) {
         secure: req.secure,
         originalUrl: req.originalUrl
     });
-    /*
+    
 	console.log( "body: " + util.inspect( req.body ) );
 	console.log( "headers: " + req.headers );
 	console.log( "trailers: " + req.trailers );
@@ -40,7 +40,7 @@ exports.logData = function ( req ) {
 	console.log( "protocol: " + req.protocol );
 	console.log( "secure: " + req.secure );
 	console.log( "originalUrl: " + req.originalUrl );
-	*/
+	
 };
 
 

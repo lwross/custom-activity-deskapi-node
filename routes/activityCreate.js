@@ -64,8 +64,6 @@ function initCase(req,res) {
 		use new customer id to create case.
 */
 
-	console.log(req);
-
 	//merge the array of objects.
 	var aArgs = req.body.inArguments;
 	var oArgs = {};
@@ -96,7 +94,7 @@ function initCase(req,res) {
 		} else if (msg == 'createCase') {
 			console.log('controller createCase', data);
 			if (data.id) {
-				res.send( 200, {"caseID": data.id} ); //return the new CaseID
+				res.send( 200, {"caseID": data.id} ); //return the new CaseID...this is the outArguments
 			} else {
 				res.send( 500, {message: 'Error creating Desk.com case.'} );
 			}					
