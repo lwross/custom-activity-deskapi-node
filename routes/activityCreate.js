@@ -64,6 +64,8 @@ function initCase(req,res) {
 		use new customer id to create case.
 */
 
+	console.log(req);
+
 	//merge the array of objects.
 	var aArgs = req.body.inArguments;
 	var oArgs = {};
