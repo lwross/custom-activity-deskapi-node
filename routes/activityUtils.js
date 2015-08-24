@@ -45,9 +45,9 @@ exports.logData = function ( req ) {
 
 
 exports.deskCreds = {
-	subdomain: '__subdomain__'
-	,username: '__username__'
-	,userpw: '__password__'
+	subdomain: 'lachlan'
+	,username: 'lachlan.ross@salesforce.com'
+	,userpw: 'letmein2Day'
 };
 
 exports.deskCreds.host = exports.deskCreds.subdomain + '.desk.com'; 
