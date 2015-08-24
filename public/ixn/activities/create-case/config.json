@@ -17,6 +17,7 @@
 			"inArguments":[
 				{ "firstName":"{{Contact.Attribute.JBDE.First_Name}}"},
 				{ "lastName":"{{Contact.Attribute.JBDE.Last_Name}}"},
+                { "signupDate":"{{Contact.Attribute.JBDE.Signup_Date}}"},
                 { "address1":"{{Contact.Attribute.JBDE.Address1}}"},
                 { "address2":"{{Contact.Attribute.JBDE.Address2}}"},
                 { "city":"{{Contact.Attribute.JBDE.City}}"},
