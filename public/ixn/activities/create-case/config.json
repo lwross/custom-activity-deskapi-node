@@ -17,6 +17,11 @@
 			"inArguments":[
 				{ "firstName":"{{Contact.Attribute.JBDE.First_Name}}"},
 				{ "lastName":"{{Contact.Attribute.JBDE.Last_Name}}"},
+                { "address1":"{{Contact.Attribute.JBDE.Address1}}"},
+                { "address2":"{{Contact.Attribute.JBDE.Address2}}"},
+                { "city":"{{Contact.Attribute.JBDE.City}}"},
+                { "state":"{{Contact.Attribute.JBDE.State}}"},
+                { "postalCode":"{{Contact.Attribute.JBDE.PostalCode}}"},
 				{ "emailAddress": "{{Contact.Default.Email}}"}							
 			],
             "outArguments": [
