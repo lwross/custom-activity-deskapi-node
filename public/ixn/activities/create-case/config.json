@@ -39,7 +39,7 @@
     },
     "configurationArguments": {
     	"applicationExtensionKey": "deskapi-lachlanross",
-        "defaults": { "priority": "4"},             
+        "defaults": { "priority": "2"},             
         "save": {
         	"url": "https://deskapi-custom-activity.herokuapp.com/ixn/activities/create-case/save/",
             "body": "",
