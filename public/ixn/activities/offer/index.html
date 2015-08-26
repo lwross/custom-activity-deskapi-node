@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Configure Offer</title>
+	<script data-main="js/main.js" src="js/require.js"></script>
+
+	<!--Styles-->
+	<link rel="stylesheet" type="text/css" href="css/styles.css" />
+</head>
+<body>
+	<div id="step1" class="step">
+	<p><small id="version"></small></p>
+	<p/>
+	<h1>Desk.com API Custom Activity (Create Case)</h1>
+	<p>This Activity matches the subscriber to an offer.</p>
+	<p/>        
+		Select the amount for the offer: 
+		<select id="selectAmount">
+			<option value="">Select an option</option>
+			<option value="5">$5</option>
+			<option value="10">$10</option>
+			<option value="20">$20</option>
+			<option value="50">$50</option>
+			<option value="100">$100</option>
+		</select>
+	</div>
+	<div id="step2" class="step">
+		<p>Please review your settings.</p>
+		<p/>
+		Amount: <div id="showAmount"></div>
+	</div>			
+</body>
+</html>

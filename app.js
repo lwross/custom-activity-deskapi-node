@@ -19,10 +19,10 @@ var app = express();
 
 
 var APIKeys = {
-    appId           : 'b82cd663-c8db-48bb-9af1-2ee3ebe2b201',
-    clientId        : 'fr4dc8bqu5s2hru36bbp32vz',
-    clientSecret    : '536gqycm7N7mbRguGMNVCe4P',
-    appSignature    : '3lkp1ymd5qbedtpwvax1xc5ubbrigpg2jeqggnnvusadyhat45crqeosh0c0kkrg203w0ogfuchoffxy123vvvudclumoftgtlonhxjcfa2njjskcgnb35k32iiflvjivdjgtn3nxk10ife0jwqrfakqyh34do0kcmbaksyni0pbbzpq1autinx40blw0vlwpxf2r5omfu30zj20z4stnkk1tne0ijwuwej2lypyvgqxyboclmkrcesmq4ewzzp',
+    appId           : 'f879eebe-6b5c-41d8-9d76-9a9d20a64ad1',
+    clientId        : '3w752ykm9sftsjt989pnc6db',
+    clientSecret    : '9c4y4XXqfsBzSqMrpzvwBgru',
+    appSignature    : '2lsmklcqy3mow1obyav4lttw5vsrqljnpdlunlrvh3z4xsdmebxs1tbdiwrtzsnjxrqud5a3mgy1r5q4jmmaozzuk325zgopvojpziingjjqes0gb2elyttxpk0qrfvtthft3ca431xq12bwa1014ltq1lqyqho5tmp5wgn0qiie4wsazuimd0geshbtoocgml2aowcyqbpxmeqm0on1hadx0quyokljmy34bhztdsrqc43ihwdwfuxqspfylmc',
     authUrl         : 'https://auth.exacttargetapis.com/v1/requestToken?legacy=1'
 };
 
@@ -73,10 +73,10 @@ app.post('/login', tokenFromJWT, routes.login );
 app.post('/logout', routes.logout );
 
 // Custom Activity Routes for interacting with Desk.com API
-app.post('/ixn/activities/create-case/save/', activityCreate.save );
-app.post('/ixn/activities/create-case/validate/', activityCreate.validate );
-app.post('/ixn/activities/create-case/publish/', activityCreate.publish );
-app.post('/ixn/activities/create-case/execute/', activityCreate.execute );
+app.post('/ixn/activities/offer/save/', activityCreate.save );
+app.post('/ixn/activities/offer/validate/', activityCreate.validate );
+app.post('/ixn/activities/offer/publish/', activityCreate.publish );
+app.post('/ixn/activities/offer/execute/', activityCreate.execute );
 
 app.post('/ixn/activities/update-case/save/', activityUpdate.save );
 app.post('/ixn/activities/update-case/validate/', activityUpdate.validate );
