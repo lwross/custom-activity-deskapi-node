@@ -109,7 +109,7 @@ function initCase(req,res) {
 			
 	};
 
-	findCustIdByEmail(email, controller);
+	//findCustIdByEmail(email, controller);
 };
 
 
