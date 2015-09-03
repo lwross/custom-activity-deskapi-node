@@ -26,18 +26,6 @@ var APIKeys = {
     authUrl         : 'https://auth.exacttargetapis.com/v1/requestToken?legacy=1'
 };
 
-var fuel = require('fuel').configure({
-    authUrl: APIKeys.authUrl,
-    clientId: APIKeys.clientId,
-    clientSecret: APIKeys.clientSecret
-});
-
-fuel({
-    url: 'https://www.exacttargetapis.com/platform/v1/tokenContext'
-}, function (error, request, body) {
-    console.log(body);
-});
-
 // Simple custom middleware
 function tokenFromJWT( req, res, next ) {
     // Setup the signature for decoding the JWT
