@@ -1,18 +1,6 @@
 define( function( require ) {
 
     'use strict';
-
-    var fuel = require('vendor/fuel').configure({
-        authUrl: APIKeys.authUrl,
-        clientId: APIKeys.clientId,
-        clientSecret: APIKeys.clientSecret
-    });
-
-    fuel({
-        url: 'https://www.exacttargetapis.com/platform/v1/tokenContext'
-    }, function (error, request, body) {
-        console.log(body);
-    });
     
 	var Postmonger = require( 'postmonger' );
 	var $ = require( 'vendor/jquery.min' );
