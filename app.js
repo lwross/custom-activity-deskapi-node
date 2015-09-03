@@ -15,7 +15,7 @@ var pkgjson = require( './package.json' );
 var app = express();
 
 // Register configs for the environments where the app functions
-// , these can be stored in a separate file using a module like config
+// , these should be stored in a separate file using a module like config
 
 
 var APIKeys = {
@@ -26,6 +26,17 @@ var APIKeys = {
     authUrl         : 'https://auth.exacttargetapis.com/v1/requestToken?legacy=1'
 };
 
+var fuel = require('fuel').configure({
+    authUrl: APIKeys.authUrl,
+    clientId: APIKeys.clientId,
+    clientSecret: APIKeys.clientSecret
+});
+
+fuel({
+    url: 'https://www.exacttargetapis.com/platform/v1/tokenContext'
+}, function (error, request, body) {
+    console.log(body);
+});
 
 // Simple custom middleware
 function tokenFromJWT( req, res, next ) {
