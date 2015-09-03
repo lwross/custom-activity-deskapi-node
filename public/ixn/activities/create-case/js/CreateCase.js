@@ -75,6 +75,28 @@ define( function( require ) {
     });
 
     function onRender() {
+
+
+        var APIKeys = {
+            appId           : 'b82cd663-c8db-48bb-9af1-2ee3ebe2b201',
+            clientId        : 'fr4dc8bqu5s2hru36bbp32vz',
+            clientSecret    : '536gqycm7N7mbRguGMNVCe4P',
+            appSignature    : '3lkp1ymd5qbedtpwvax1xc5ubbrigpg2jeqggnnvusadyhat45crqeosh0c0kkrg203w0ogfuchoffxy123vvvudclumoftgtlonhxjcfa2njjskcgnb35k32iiflvjivdjgtn3nxk10ife0jwqrfakqyh34do0kcmbaksyni0pbbzpq1autinx40blw0vlwpxf2r5omfu30zj20z4stnkk1tne0ijwuwej2lypyvgqxyboclmkrcesmq4ewzzp',
+            authUrl         : 'https://auth.exacttargetapis.com/v1/requestToken?legacy=1'
+        };
+
+        var fuel = require('fuel').configure({
+            authUrl: APIKeys.authUrl,
+            clientId: APIKeys.clientId,
+            clientSecret: APIKeys.clientSecret
+        });
+
+        fuel({
+            url: 'https://www.exacttargetapis.com/platform/v1/tokenContext'
+        }, function (error, request, body) {
+            console.log(body);
+        });
+
         connection.trigger('ready');
 
         connection.trigger('requestTokens');
