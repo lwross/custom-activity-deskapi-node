@@ -80,11 +80,17 @@ define( function( require ) {
         connection.trigger('requestTokens');
         connection.trigger('requestEndpoints');
 
+
         // Disable the next button if a value isn't selected
-        $('#selectAmount').change(function() {
-            var amount = getAmount();
-            connection.trigger('updateButton', { button: 'next', enabled: Boolean(amount) });
+        $('#selectValueTier').change(function() {
+            var valueTier = getselectValueTier();
+            var type = getselectType();
+            var bonus = getselectBonus();
+            var valid = Boolean(valueTier) && Boolean(valueBonus) && Boolean(valueType)
+            connection.trigger('updateButton', { button: 'next', enabled: valid });
         });
+
+
     };
 
     function gotoStep(step) {
@@ -107,8 +113,14 @@ define( function( require ) {
         }
     };
 
-    function getAmount() {
-        return $('#selectAmount').find('option:selected').attr('value').trim();
+    function getValueTier() {
+        return $('#selectValueTier').find('option:selected').attr('value').trim();
+    };
+    function getType() {
+        return $('#selectType').find('option:selected').attr('value').trim();
+    };
+    function getBonus() {
+        return $('#selectBonus').find('option:selected').attr('value').trim();
     };
 
     function save() {
