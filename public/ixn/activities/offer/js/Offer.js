@@ -90,6 +90,22 @@ define( function( require ) {
             connection.trigger('updateButton', { button: 'next', enabled: valid });
         });
 
+        $('#selectType').change(function() {
+            var valueTier = getselectValueTier();
+            var type = getselectType();
+            var bonus = getselectBonus();
+            var valid = Boolean(valueTier) && Boolean(valueBonus) && Boolean(valueType)
+            connection.trigger('updateButton', { button: 'next', enabled: valid });
+        });
+
+        $('#selectBonus').change(function() {
+            var valueTier = getselectValueTier();
+            var type = getselectType();
+            var bonus = getselectBonus();
+            var valid = Boolean(valueTier) && Boolean(valueBonus) && Boolean(valueType)
+            connection.trigger('updateButton', { button: 'next', enabled: valid });
+        });
+
 
     };
 
