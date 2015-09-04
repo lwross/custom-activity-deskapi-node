@@ -11,25 +11,54 @@
 </head>
 <body>
 	<div id="step1" class="step">
-	<p><small id="version"></small></p>
-	<p/>
-	<h1>SB Custom Activity</h1>
-	<p>This Activity matches the subscriber to an offer.</p>
-	<p/>        
-		Select the amount for the offer: 
-		<select id="selectAmount">
-			<option value="">Select an option</option>
-			<option value="5">$5</option>
-			<option value="10">$10</option>
-			<option value="20">$20</option>
-			<option value="50">$50</option>
-			<option value="100">$100</option>
-		</select>
+		<p><small id="version"></small></p>
+		<p/>
+		<h1>Sportsbet Custom Activity</h1>
+		<p>This Activity matches the subscriber to an offer.</p>
+		<p/>  
+
+		<table>
+			<tr>
+				<th>Value Tier</th>
+				<th>Type</th>
+				<th>Offer</th>
+			</tr>
+			<tr>
+				<td>
+					<select id="selectValueTier">
+						<option value="">Select an option</option>
+						<option value="all">ALL</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="none">NONE</option>
+					</select>
+				</td>
+				<td>
+					<select id="selectType">
+						<option value="">Select an option</option>
+						<option value="trigger">Trigger</option>
+						<option value="token">Token</option>
+					</select>
+				</td>
+				<td>
+					<select id="selectBonus">
+						<option value="">Select an option</option>
+						<option value="1">Free Bet</option>
+						<option value="2">Double Trouble</option>
+						<option value="3">Cash Back</option>
+						<option value="4">Reload Bonus</option>
+					</select>
+				</td>
+			</tr>
+		</table>      
 	</div>
 	<div id="step2" class="step">
 		<p>Please review your settings.</p>
-		<p/>
-		Amount: $<div id="showAmount"></div>
+		
+		Value Tier:<div id="showValueTier"></div><br />
+		Type:<div id="showType"></div><br />
+		Bonus:<div id="showBonus"></div><br />
 	</div>			
 </body>
 </html>
