@@ -76,10 +76,8 @@ define( function( require ) {
 
     function onRender() {
         connection.trigger('ready');
-
         connection.trigger('requestTokens');
         connection.trigger('requestEndpoints');
-
 
         // Disable the next button if a value isn't selected
         $('#selectValueTier').change(function() {
