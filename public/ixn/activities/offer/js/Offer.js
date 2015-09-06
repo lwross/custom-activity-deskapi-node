@@ -114,12 +114,18 @@ define( function( require ) {
         switch(step) {
             case 1:
                 $('#step1').show();
-                connection.trigger('updateButton', { button: 'next', text: 'next', enabled: Boolean(getAmount()) });
+                var valueTier = getValueTier();
+                var type = getType();
+                var bonus = getBonus();
+                var valid = Boolean(valueTier) && Boolean(bonus) && Boolean(type);
+                connection.trigger('updateButton', { button: 'next', text: 'next', enabled: valid });
                 connection.trigger('updateButton', { button: 'back', visible: false });
                 break;
             case 2:
                 $('#step2').show();
-                $('#showAmount').html(getAmount());
+                $('#showValueTier').html(getValueTierText());
+                $('#showType').html(getTypeText());
+                $('#showBonus').html(getBonusText());
                 connection.trigger('updateButton', { button: 'back', visible: true });
                 connection.trigger('updateButton', { button: 'next', text: 'done', visible: true });
                 break;
@@ -139,16 +145,30 @@ define( function( require ) {
         return $('#selectBonus').find('option:selected').attr('value').trim();
     };
 
+    function getValueTierText() {
+        return $('#selectValueTier').find('option:selected').text().trim();
+    };
+    function getTypeText() {
+        return $('#selectType').find('option:selected').text().trim();
+    };
+    function getBonusText() {
+        return $('#selectBonus').find('option:selected').text().trim();
+    };
+
     function save() {
 
-        var value = getAmount();
+        var valueTier = getValueTier();
+        var type = getType();
+        var bonus = getBonus();
 
         // toJbPayload is initialized on populateFields above.  Journey Builder sends an initial payload with defaults
         // set by this activity's config.json file.  Any property may be overridden as desired.
         //toJbPayload.name = "my activity";
 
-		//this will be sent into the custom activity body within the inArguments array.
-        toJbPayload['arguments'].execute.inArguments.push({"amount": value});
+        //this will be sent into the custom activity body within the inArguments array.
+        toJbPayload['arguments'].execute.inArguments.push({"valueTier": valueTier});
+        toJbPayload['arguments'].execute.inArguments.push({"type": type});
+        toJbPayload['arguments'].execute.inArguments.push({"bonus": bonus});
 
 		/*
         toJbPayload['metaData'].things = 'stuff';
